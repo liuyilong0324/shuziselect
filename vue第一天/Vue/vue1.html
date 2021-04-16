@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+
+</head>
+
+<body>
+  <div id="app">
+    <!-- <h1>商品管理</h1>
+    <ul>
+      <li v-for="(item,i) in products">
+        商品名称:{{item.name}}
+        <button @click='changenum(item,item.store-1)'>-</button>
+        <span>商品库存:{{item.store}}</span>
+        <button @click='changenum(item,item.store+1)'>+</button>
+      </li>
+    </ul>
+    <span>{{total}}</span> -->
+
+
+    <!-- <img :src="imageurl" alt=""> -->
+  </div>
+
+
+  <script src="./vue.min.js"></script>
+  <script>
+    //   let app = new Vue({
+    //     el: '',
+    //     computed: {
+    //       total() {
+    //         return this.products.reduce((a, b) => a + b.store, 0)
+    //       }
+    //     },
+    //     data: {
+    //       products: [{
+    //           name: 'xiaomi',
+    //           store: 10
+    //         },
+    //         {
+    //           name: 'huawei',
+    //           store: 20
+    //         }
+    //       ],
+    //     },
+    //     methods: {
+    //       changenum(product, newstore) {
+    //         if (newstore < 0) {
+    //           newstore = 0;
+    //         }
+    //         product.store = newstore
+    //       }
+    //     },
+    //     template: `<div id="app">
+    //   <h1>商品管理</h1>
+    //   <ul>
+    //     <li v-for="(item,i) in products">
+    //       商品名称:{{item.name}}
+    //       <button @click='changenum(item,item.store-1)'>-</button>
+    //       <span>商品库存:{{item.store}}</span>
+    //       <button @click='changenum(item,item.store+1)'>+</button>
+    //     </li>
+    //   </ul>
+    //   <span>{{total}}</span>
+
+
+    // </div>`,
+    //   })
+
+
+
+    //v-bind指令
+    let app = new Vue({
+      el: '',
+      data: {
+        imageurl: 'https://dss2.bdstatic.com/70cFvnSh_Q1YnxGkpoWK1HF6hhy/it/u=123771373,3233674795&fm=26&gp=0.jpg'
+      }
+    })
+
+    app.$mount('#app')
+  </script>
+</body>
+
+</html>
