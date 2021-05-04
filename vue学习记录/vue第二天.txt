@@ -1,0 +1,11 @@
+组件data为一个函数
+形成每个组件相互独立
+
+
+注：
+组件名字不可以与html自身存在的标签名同名，否则，组件无效
+
+
+
+报错：did you register the component correctly? For recursive components
+组件名称不能用大写
