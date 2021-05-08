@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .one {}
+
+    .one>img {
+      width: 200px;
+      height: 100px;
+      float: left;
+    }
+  </style>
+</head>
+
+<body>
+
+
+  <div>
+    <img src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1986451467,394304688&fm=26&gp=0.jpg" alt="" data-src='https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3566088443,3713209594&fm=26&gp=0.jpg'>
+    <img src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1986451467,394304688&fm=26&gp=0.jpg" alt="" data-src='https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3566088443,3713209594&fm=26&gp=0.jpg'>
+    <img src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1986451467,394304688&fm=26&gp=0.jpg" alt="" data-src='https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3566088443,3713209594&fm=26&gp=0.jpg'>
+    <img src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1986451467,394304688&fm=26&gp=0.jpg" alt="" data-src='https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3566088443,3713209594&fm=26&gp=0.jpg'>
+    <img src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1986451467,394304688&fm=26&gp=0.jpg" alt="" data-src='https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3566088443,3713209594&fm=26&gp=0.jpg'>
+    <img src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1986451467,394304688&fm=26&gp=0.jpg" alt="" data-src='https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3566088443,3713209594&fm=26&gp=0.jpg'>
+    <img src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1986451467,394304688&fm=26&gp=0.jpg" alt="" data-src='https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3566088443,3713209594&fm=26&gp=0.jpg'>
+    <img src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1986451467,394304688&fm=26&gp=0.jpg" alt="" data-src='https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3566088443,3713209594&fm=26&gp=0.jpg'>
+    <img src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1986451467,394304688&fm=26&gp=0.jpg" alt="" data-src='https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3566088443,3713209594&fm=26&gp=0.jpg'>
+    <img src="https://ss3.bdstatic.com/70cFv8Sh_Q1YnxGkpoWK1HF6hhy/it/u=1986451467,394304688&fm=26&gp=0.jpg" alt="" data-src='https://ss1.bdstatic.com/70cFuXSh_Q1YnxGkpoWK1HF6hhy/it/u=3566088443,3713209594&fm=26&gp=0.jpg'>
+  </div>
+
+
+  <script>
+    
+//     window.onload = function(){
+// 	// 获取图片列表，即img标签列表
+// 	var imgs = document.querySelectorAll('img');
+
+// 	// 获取到浏览器顶部的距离
+// 	function getTop(e){
+// 		return e.offsetTop;
+// 	}
+
+// 	// 懒加载实现
+// 	function lazyload(imgs){
+    
+//     console.log('滚动')
+// 		// 可视区域高度
+// 		var h = window.innerHeight;
+// 		//滚动区域高度
+// 		var s = document.documentElement.scrollTop || document.body.scrollTop;
+// 		for(var i=0;i<imgs.length;i++){
+// 			//图片距离顶部的距离大于可视区域和滚动区域之和时懒加载
+// 			if ((h+s)>getTop(imgs[i])) {
+// 				// 真实情况是页面开始有2秒空白，所以使用setTimeout定时2s
+// 				(function(i){
+// 					setTimeout(function(){
+// 						// 不加立即执行函数i会等于9
+// 						// 隐形加载图片或其他资源，
+// 						//创建一个临时图片，这个图片在内存中不会到页面上去。实现隐形加载
+// 						var temp = new Image();
+// 						temp.src = imgs[i].getAttribute('data-src');//只会请求一次
+// 						// onload判断图片加载完毕，真是图片加载完毕，再赋值给dom节点
+// 						temp.onload = function(){
+// 							// 获取自定义属性data-src，用真图片替换假图片
+// 							imgs[i].src = imgs[i].getAttribute('data-src')
+// 						}
+// 					},2000)
+// 				})(i)
+// 			}
+// 		}
+// 	}
+//   debounce(lazyload(imgs),2000)
+	
+
+
+//   function debounce(fn, delay) {
+//     var timer=null; // 维护一个 timer
+//     return function () {
+//         var _this = this; // 取debounce执行作用域的this
+//         var args = arguments;
+//         if (timer) {
+//             clearTimeout(timer);
+//         }
+//         timer = setTimeout(function () {
+//             fn.apply(_this, args); // 用apply指向调用debounce的对象，相当于_this.fn(args);
+//         }, delay);
+//     };
+// }
+// window.onscroll =function(){
+//   lazyload(imgs)
+// 	}
+// 	// 滚屏函数
+	
+// }
+
+
+
+
+// function debounce(fn, delay) {
+//     var timer=null; // 维护一个 timer
+//     return function () {
+//         var _this = this; // 取debounce执行作用域的this
+//         var args = arguments;
+//         if (timer) {
+//             clearTimeout(timer);
+//         }
+//         timer = setTimeout(function () {
+//             fn.apply(_this, args); // 用apply指向调用debounce的对象，相当于_this.fn(args);
+//         }, delay);
+//     };
+// }
+// function testDebounce() {
+//     console.log('555');
+// }
+
+// document.onmousemove = function (e) {
+//    debounce(testDebounce,2000) // 给防抖函数传参
+// }
+
+
+for (var i = 0; i < 5; i++) {
+ 	(function (j) { 
+ 		setTimeout(function() { 
+ 			console.log(j); 
+ 		}, 1000 * j); 
+ 	})(i); 
+ } 
+
+// function testDebounce() {
+//     console.log('jjjj');
+// }
+
+// window.onscroll=function(){
+//   // debounce(testDebounce,2000)
+//   // console.log('ss')
+//   // var timer=null;
+//   // if(timer){
+//   //   clearTimeout(timer)
+//   // }
+//   // timer=setTimeout(function(){
+//   //   console.log('kkk')
+//   // },2000)
+//   debounce(testDebounce,2000)
+// }
+
+
+
+    // window.onload = window.onscroll = function () { //onscroll()在滚动条滚动的时候触发
+    //         lazyload(imgs);
+    //     }
+    // {
+    // let a;
+    // // }
+
+
+    // function abc() {
+    //   // let a;
+    //   console.log(a)
+    // }
+
+    // abc()
+    // var arr=[2, 3, 1, 0, 2, 5, 3]   
+    // var findRepeatNumber = function(arr) {
+    // // let map = new Map();
+    // // for (let i = 0; i < arr.length; i++) {
+    // //     if(map.has(arr[i])){
+    // //         return arr[i];
+    // //         //console.log(arr[i])
+    // //     }
+    // //      map.set(arr[i])
+    // // }
+    // var i=0;
+    // while(i<arr.length){
+    //   if(arr[i]==i){
+    //     i++
+    //     continue;
+    //   }
+    //   if(arr[arr[i]]==arr[i]) return arr[i];
+    //   var temp=arr[arr[i]];
+    //   arr[arr[i]]=arr[i];
+    //   arr[i]=temp
+    // }
+    // }
+    // console.log(findRepeatNumber(arr))
+    //     var arr=[[1,4,7,11,15],[2,5,8,12,19],[3,6,9,16,22],[10,13,14,17,24],[18,21,23,26,30]]
+
+    //     var findNumberIn2DArray = function(arr, target) {
+    //     var y=arr.length-1;
+    //     var x=0;
+    //     while( y>=0 && x < arr[0].length){
+    //         if(arr[x][y]>target) y--;
+    //         else if(arr[x][y]<target)  x++;
+    //         else return true
+    //     }
+
+    //     return false
+    // };
+
+
+    // console.log(findNumberIn2DArray(arr,3333))
+
+
+    // var arr=[5,7,7,8,8,10]
+
+    // var search = function (arr, target) {
+    //   if (i > j) {
+    //     return false;
+    //   }
+    //   var i = 0;
+    //   var j = arr.length - 1;
+
+    //   }
+
+
+
+    // };
+
+    // console.log(search(arr,8))
+
+
+    // public int search(int[] nums, int target) {
+    //   return helper(nums, target) - helper(nums, target - 1);
+    // }
+    // int helper(int[] nums, int tar) {
+    //   int i = 0, j = nums.length - 1;
+    //   while (i <= j) {
+    //     int m = (i + j) / 2;
+    //     if (nums[m] <= tar) i = m + 1;
+    //     else j = m - 1;
+    //   }
+    //   return i;
+    // }
+    //       var arr=[5,7,7,8,8,10]
+
+    //       function search(data, k)
+    // {
+    //     // write code here
+    //     let num=data.indexOf(k);
+    //     if(num==-1)return 0;
+    //     let temp=1;
+    //     for(let i=num+1;i<data.length;i++){
+    //         if(data[i]==k)temp++;
+    //     }
+    //     return temp;
+    // }
+
+    //       console.log(search(arr,8))
+
+    // var arr=[0,1,3,4]
+    // var missingNumber = function(nums) {
+    //     var i=0
+    //     var j=nums.length-1;
+    // var m;
+    //     while(i<=j){
+    //          m=parseInt((i+j)/2)
+    //         if(nums[m]==m) {
+    //           i=m+1
+    //         }
+    //          else {
+    //           j=m-1
+    //          }
+
+    //     }
+    //     return i
+    // };
+
+    // console.log(missingNumber(arr))
+
+
+    var getLeastNumbers = function (arr, k) {
+      quick(arr, 0, arr.length)
+
+    };
+
+
+    function quick(arr, begin, end) {
+      if (begin >= end - 1) return
+      var left = begin;
+      var right = end;
+      do {
+        do left++; while (left < right && arr[left] < arr[begin])
+        do right--; while (left < right && arr[right] > arr[begin])
+        if (left < right) {
+          swap(arr, left, right)
+        }
+      } while (left < end)
+      var swapPoint = left == right ? right - 1 : right;
+      swap(arr, arr[begin], arr[swapPoint])
+      quick(arr, begin, swapPoint)
+      quick(arr, swapPoint + 1, end)
+
+    }
+
+    function swap(arr, x, y) {
+      var temp = arr[x];
+      arr[x] = arr[y];
+      arr[y] = temp
+    }
+    var arr = [3, 2, 1, 4, 5]
+    getLeastNumbers(arr, 2)
+
+    console.log(arr)
+  </script>
+</body>
+
+</html>
