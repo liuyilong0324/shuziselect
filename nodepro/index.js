@@ -191,6 +191,46 @@ const filename = path.resolve(__dirname ,'./file/1.txt')
 
 
 
-//和ajax没关系，普通的http请求，所以不是浏览器上的，不会跨域
-http.request()
+//和ajax没关系，类似于ajax，但是更加纯粹，普通的http请求，所以不是浏览器上的，不会跨域
+// const request=http.request('http://duyi.ke.qq.com/', {
+//   method: 'GET',
+//   // headers: {
+    
+//   // }
+// }, res => {
+//   console.log(res.statusCode);
+// })
 
+// request.end()
+
+
+
+function handlereq(req) {
+  const ur=URL.parse(req.url)
+  // console.log(ur);
+  // console.log('请求来了');
+  // console.log(req.headers);
+
+  let body = '';
+  req.on('data', chunk => {
+    body += chunk.toString('utf-8');
+  })
+  req.on('end', () => {
+    console.log(body);
+  })
+}
+
+
+const server = http.createServer((req, res) => {
+  handlereq(req)
+  res.setHeader('a', '1');
+  res.write('你好')
+  res.end()
+  
+})
+
+server.listen(80)
+
+server.on('listening', () => {
+ console.log('监听中');
+})
